@@ -37,7 +37,7 @@ The Entity-Relationship Diagram (ERD) below visually represents the structure an
   
 ## Potential Business Questions
 
-Your Netflix shows and movies database can address various business problems. Below are some potential business questions and the corresponding SQL queries that can provide insights:
+This Netflix shows and movies database can address various business problems. Below are some potential business questions and the corresponding SQL queries that can provide insights:
 
 ### Content Strategy Development
 - **Problem**: Determining which genres or types of content are most popular to inform future content acquisition or production.

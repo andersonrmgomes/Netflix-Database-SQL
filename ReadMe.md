@@ -71,5 +71,5 @@ This Netflix shows and movies database can address various business problems. Be
 - **Problem**: Determining which types of content warrant higher investment.
 - **Query**: Assess the correlation between content genres (`LISTED_IN`) and their ratings/popularity to allocate budget effectively.
 
-These queries leverage the rich data available in your Netflix shows and movies database to guide decision-making in content strategy, marketing, production, and more.
+These queries leverage the rich data available in this Netflix shows and movies database to guide decision-making in content strategy, marketing, production, and more.
 

@@ -4,7 +4,7 @@
 This ERD (Entity-Relationship Diagram) provides a visual representation of the relationships between the various tables in the Netflix shows and movies database. It is designed to help users understand how different tables are interconnected and how data flows within the database. 
 
 ## ERD Diagram
-To view the ERD, you can use tools that support the Mermaid syntax. Below is the ERD code written in Mermaid format (look at the raw md file to retrieve the code):
+To view the ERD, you can use tools that support the Mermaid syntax. Below is the ERD code written in Mermaid format (click on the copy icon on the ERD to retrieve the code):
 
 ```mermaid
 erDiagram

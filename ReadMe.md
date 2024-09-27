@@ -1,75 +1,75 @@
-# Netflix Shows and Movies - SQL Database Project
 
-## Overview
-This project involves creating a normalized SQL database derived from a dataset of Netflix shows and movies. The original dataset was obtained from Kaggle: [Netflix Shows and Movies - Exploratory Analysis](https://www.kaggle.com/code/shivamb/netflix-shows-and-movies-exploratory-analysis/input).
+# Netflix Shows and Movies - Projeto de Banco de Dados SQL
 
-The purpose of this project is to demonstrate data normalization and SQL database creation skills, transforming a flat CSV file into a structured and normalized SQL database.
+## Visão Geral
+Este projeto envolve a criação de um banco de dados SQL normalizado a partir de um conjunto de dados de séries e filmes da Netflix. O conjunto de dados original foi obtido no Kaggle: [Netflix Shows and Movies - Exploratory Analysis](https://www.kaggle.com/code/shivamb/netflix-shows-and-movies-exploratory-analysis/input).
 
-## Database Structure
-The database consists of multiple tables, each representing a specific aspect of the Netflix dataset. The tables are normalized to reduce redundancy and improve data integrity. The final table, `ALL_SHOW_INFO`, combines data from all these tables to provide a comprehensive overview of the dataset.
+O objetivo deste projeto é demonstrar habilidades de normalização de dados e criação de banco de dados SQL, transformando um arquivo CSV plano em um banco de dados SQL estruturado e normalizado.
 
-### Tables in the Database:
-- `MOVIES`: Contains movie titles and their IDs.
-- `DIRECTOR`: Stores director names and their IDs.
-- `CAST`: Lists cast members and their IDs.
-- `MISC`: Includes miscellaneous information like country and type.
-- `TIME_INFO`: Contains time-related data such as date added and release year.
-- `RATING`: Stores rating descriptions and their IDs.
-- `LISTED_IN`: Lists genres/categories and their IDs.
-- `MOVIE_DESCRIPTIONS`: Provides descriptions of shows and movies.
-- `MOVIE_INFO`: Contains additional movie information like duration.
-- `DATA_RATING`: Links shows to their ratings.
-- `DATA_LISTED_IN`: Links shows to their genres/categories.
-- `CASTING`: Connects shows to their directors and cast members.
+## Estrutura do Banco de Dados
+O banco de dados consiste em várias tabelas, cada uma representando um aspecto específico do conjunto de dados da Netflix. As tabelas foram normalizadas para reduzir a redundância e melhorar a integridade dos dados. A tabela final, `ALL_SHOW_INFO`, combina dados de todas essas tabelas para fornecer uma visão abrangente do conjunto de dados.
 
-The `ALL_SHOW_INFO` table is a comprehensive table that combines data from all the above tables using SQL joins. It includes fields like show ID, title, director name, cast members, country, date added, release year, rating description, duration, genre, description, and type.
+### Tabelas no Banco de Dados:
+- `MOVIES`: Contém títulos de filmes e seus IDs.
+- `DIRECTOR`: Armazena nomes de diretores e seus IDs.
+- `CAST`: Lista membros do elenco e seus IDs.
+- `MISC`: Inclui informações diversas, como país e tipo.
+- `TIME_INFO`: Contém dados relacionados ao tempo, como data de adição e ano de lançamento.
+- `RATING`: Armazena descrições de classificação e seus IDs.
+- `LISTED_IN`: Lista gêneros/categorias e seus IDs.
+- `MOVIE_DESCRIPTIONS`: Fornece descrições de séries e filmes.
+- `MOVIE_INFO`: Contém informações adicionais sobre filmes, como duração.
+- `DATA_RATING`: Vincula séries/filmes às suas classificações.
+- `DATA_LISTED_IN`: Vincula séries/filmes aos seus gêneros/categorias.
+- `CASTING`: Conecta séries/filmes a seus diretores e membros do elenco.
 
-## Usage Instructions
-1. **ALL_TOGETHER.sql**: Run this file first to create the entire database with all the individual tables.
-2. **final_TABLE.sql**: Execute this file to create the `ALL_SHOW_INFO` table, which consolidates all fields into a single table.
-3. **Database_queries.sql**: This file contains queries to display the top 100 rows from the `ALL_SHOW_INFO` table. Running these queries will showcase that the database and the final table have been set up correctly.
+A tabela `ALL_SHOW_INFO` é uma tabela abrangente que combina dados de todas as tabelas mencionadas usando *joins* SQL. Inclui campos como ID da série, título, nome do diretor, membros do elenco, país, data de adição, ano de lançamento, descrição da classificação, duração, gênero, descrição e tipo.
 
-This README is intended to provide a comprehensive guide to understanding and navigating the database created from the Netflix dataset. Each step is crucial for the proper setup and viewing of the data within the SQL environment.
+## Instruções de Uso
+1. **ALL_TOGETHER.sql**: Execute este arquivo primeiro para criar todo o banco de dados com todas as tabelas individuais.
+2. **final_TABLE.sql**: Execute este arquivo para criar a tabela `ALL_SHOW_INFO`, que consolida todos os campos em uma única tabela.
+3. **Database_queries.sql**: Este arquivo contém consultas para exibir as 100 principais linhas da tabela `ALL_SHOW_INFO`. Executar essas consultas mostrará que o banco de dados e a tabela final foram configurados corretamente.
 
-The Entity-Relationship Diagram (ERD) below visually represents the structure and interconnections of the various tables within the database. This diagram illustrates how data is organized and related across different aspects of the Netflix shows and movies dataset. (Once I have time I will combine several tables into one such as a single MOVIES table which would contain show_id, title, description, duration, etc.)  
-  
-<img width="1728" alt="image" src="https://github.com/miniquinox/Netflix-Database-SQL/assets/63688331/d9f5a8b6-50ba-4197-b7a5-fb48fd73a552">  
-  
-## Potential Business Questions
+Este README tem como objetivo fornecer um guia abrangente para entender e navegar pelo banco de dados criado a partir do conjunto de dados da Netflix. Cada etapa é crucial para a configuração correta e visualização dos dados no ambiente SQL.
 
-This Netflix shows and movies database can address various business problems. Below are some potential business questions and the corresponding SQL queries that can provide insights:
+O Diagrama de Entidade-Relacionamento (ERD) abaixo representa visualmente a estrutura e as interconexões das várias tabelas dentro do banco de dados. Este diagrama ilustra como os dados estão organizados e relacionados entre diferentes aspectos do conjunto de dados de séries e filmes da Netflix. (Assim que eu tiver tempo, vou combinar várias tabelas em uma única, como uma tabela `MOVIES`, que conteria `show_id`, título, descrição, duração, etc.)
 
-### Content Strategy Development
-- **Problem**: Determining which genres or types of content are most popular to inform future content acquisition or production.
-- **Query**: Analyze the distribution of shows/movies across different genres (`LISTED_IN`) and ratings (`RATING`) to identify popular categories.
+![image](https://github.com/miniquinox/Netflix-Database-SQL/assets/63688331/d9f5a8b6-50ba-4197-b7a5-fb48fd73a552)
 
-### Market Analysis
-- **Problem**: Understanding the distribution of content across different countries to tailor marketing strategies.
-- **Query**: Aggregate the number of shows/movies by country (`MISC.country_name`) to see which regions have the most content.
+## Perguntas Potenciais de Negócio
 
-### Release Timing Optimization
-- **Problem**: Identifying the best time of year to release new content.
-- **Query**: Examine trends in `date_added` (from `TIME_INFO`) to see which months or seasons have historically had the most releases.
+Este banco de dados de séries e filmes da Netflix pode abordar vários problemas de negócios. Abaixo estão algumas perguntas potenciais de negócios e as consultas SQL correspondentes que podem fornecer insights:
 
-### Director and Cast Analysis
-- **Problem**: Finding successful director and cast combinations for future projects.
-- **Query**: Analyze the past collaborations between directors (`DIRECTOR`) and cast members (`CAST`) that led to highly-rated or popular shows/movies.
+### Desenvolvimento de Estratégia de Conteúdo
+- **Problema**: Determinar quais gêneros ou tipos de conteúdo são mais populares para informar a aquisição ou produção de conteúdo futuro.
+- **Consulta**: Analisar a distribuição de séries/filmes entre diferentes gêneros (`LISTED_IN`) e classificações (`RATING`) para identificar categorias populares.
 
-### Viewer Preferences Study
-- **Problem**: Understanding viewer preferences based on historical data.
-- **Query**: Correlate the genres (`LISTED_IN`) and ratings (`RATING`) of shows/movies with their release years (`TIME_INFO.release_year`) to spot trends over time.
+### Análise de Mercado
+- **Problema**: Entender a distribuição de conteúdo em diferentes países para ajustar estratégias de marketing.
+- **Consulta**: Agregar o número de séries/filmes por país (`MISC.country_name`) para ver quais regiões têm mais conteúdo.
 
-### Content Longevity Analysis
-- **Problem**: Assessing which types of content remain relevant or popular for longer periods.
-- **Query**: Compare the release year (`TIME_INFO.release_year`) and the date added to the platform (`TIME_INFO.date_added`) to determine content longevity.
+### Otimização do Tempo de Lançamento
+- **Problema**: Identificar a melhor época do ano para lançar novos conteúdos.
+- **Consulta**: Examinar tendências em `date_added` (de `TIME_INFO`) para ver quais meses ou estações historicamente tiveram mais lançamentos.
 
-### Localization Strategy
-- **Problem**: Tailoring content and marketing strategies for specific countries.
-- **Query**: Identify the most common genres (`LISTED_IN`) and types (`MISC.type_name`) of shows/movies in specific countries (`MISC.country_name`).
+### Análise de Diretores e Elenco
+- **Problema**: Encontrar combinações de diretores e elenco de sucesso para futuros projetos.
+- **Consulta**: Analisar colaborações passadas entre diretores (`DIRECTOR`) e membros do elenco (`CAST`) que levaram a séries/filmes bem avaliados ou populares.
 
-### Budget Allocation for New Productions
-- **Problem**: Determining which types of content warrant higher investment.
-- **Query**: Assess the correlation between content genres (`LISTED_IN`) and their ratings/popularity to allocate budget effectively.
+### Estudo de Preferências dos Espectadores
+- **Problema**: Entender as preferências dos espectadores com base em dados históricos.
+- **Consulta**: Correlacionar os gêneros (`LISTED_IN`) e classificações (`RATING`) de séries/filmes com seus anos de lançamento (`TIME_INFO.release_year`) para identificar tendências ao longo do tempo.
 
-These queries leverage the rich data available in this Netflix shows and movies database to guide decision-making in content strategy, marketing, production, and more.
+### Análise de Longevidade do Conteúdo
+- **Problema**: Avaliar quais tipos de conteúdo permanecem relevantes ou populares por longos períodos.
+- **Consulta**: Comparar o ano de lançamento (`TIME_INFO.release_year`) e a data de adição à plataforma (`TIME_INFO.date_added`) para determinar a longevidade do conteúdo.
 
+### Estratégia de Localização
+- **Problema**: Adaptar conteúdo e estratégias de marketing para países específicos.
+- **Consulta**: Identificar os gêneros (`LISTED_IN`) e tipos (`MISC.type_name`) mais comuns de séries/filmes em países específicos (`MISC.country_name`).
+
+### Alocação de Orçamento para Novas Produções
+- **Problema**: Determinar quais tipos de conteúdo merecem maior investimento.
+- **Consulta**: Avaliar a correlação entre os gêneros de conteúdo (`LISTED_IN`) e suas classificações/popularidade para alocar o orçamento de forma eficaz.
+
+Essas consultas aproveitam os dados ricos disponíveis neste banco de dados de séries e filmes da Netflix para orientar a tomada de decisões em estratégia de conteúdo, marketing, produção e mais.
